@@ -35,8 +35,43 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
+                    
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Destinations
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" 
+                                    href="{{ route('cats-index') }}"
+                                    >
+                                        Destination list
+                                    </a>
+                                    <a class="dropdown-item" 
+                                    href="{{ route('cats-create') }}"
+                                    >
+                                        New destination
+                                    </a>
+                                </div>
+                            </li>
+    
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Hotels
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" 
+                                    {{-- href="{{ route('products-index') }}" --}}
+                                    >
+                                        Hotels list
+                                    </a>
+                                    <a class="dropdown-item" 
+                                    {{-- href="{{ route('products-create') }}" --}}
+                                    >
+                                        Add New Hotel
+                                    </a>
+                                </div>
+                            </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
