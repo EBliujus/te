@@ -11,14 +11,14 @@
                 <div class="card-body">
                     <form action="{{route('cats-update', $cat)}}" method="post">
                         <div class="mb-3">
-                            <label class="form-label">Category title</label>
-                            <input type="text" class="form-control" name="title" value={{old('title', $cat->title)}}>
-                            <div class="form-text">Please add category title here</div>
+                            <label class="form-label">Direction</label>
+                            <input type="text" class="form-control" name="country" value="{{old('country', $cat->country)}}">
+                            <div class="form-text">Please add direction here</div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Description</label>
-                            <input type="text" class="form-control" name="description" value={{old('description', $cat->description)}}>
-                            <div class="form-text">Category description</div>
+                            <input type="text" class="form-control" name="season" value="{{old('season', $cat->season)}}">
+                            <div class="form-text">Season</div>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                         @csrf

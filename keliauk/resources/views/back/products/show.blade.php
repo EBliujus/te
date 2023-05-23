@@ -6,19 +6,19 @@
         <div class="col-8">
             <div class="card mt-5">
                 <div class="card-header">
-                    <h1>Towns</h1>
+                    <h1>Holiday destinations</h1>
                 </div>
                 <div class="card-body">
                     <div class="client-line">
                         <div class="client-info">
-                            {{$town->name}}
-                            {{$town->surname}}
-                            <span>{{$town->tt ? 'TIK TOK' : 'FB'}}</span>
+                            {{$product->name}}
+                            {{$product->description}}
+                            {{-- <span>{{$town->tt ? 'TIK TOK' : 'FB'}}</span> --}}
                         </div>
                         <div class="buttons">
-                            <a href="{{route('orders-create', ['id' => $town])}}" class="btn btn-info">new order</a>
-                            <a href="{{route('towns-edit', $town)}}" class="btn btn-success">Edit</a>
-                            <form action="{{route('towns-delete', $town)}}" method="post">
+                            <a href="{{route('orders-create', ['id' => $product])}}" class="btn btn-info">new order</a>
+                            <a href="{{route('towns-edit', $product)}}" class="btn btn-success">Edit</a>
+                            <form action="{{route('towns-delete', $product)}}" method="post">
                                 <button type="submit" class="btn btn-danger">delete</button>
                                 @csrf
                                 @method('delete')
@@ -27,7 +27,7 @@
                     </div>
                     <h2>Orders</h2>
                     <ul class="list-group">
-                        @forelse($town->order as $order)
+                        @forelse($product->order as $order)
                         <li class="list-group-item">
                             <div class="order-line">
                                 <div class="order-info">

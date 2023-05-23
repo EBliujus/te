@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CatController as CC;
+use App\Http\Controllers\ProductController as PC;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+
 Route::prefix('cats')->name('cats-')->group(function () {
     Route::get('/', [CC::class, 'index'])->name('index');
     Route::get('/create', [CC::class, 'create'])->name('create');
@@ -29,4 +32,14 @@ Route::prefix('cats')->name('cats-')->group(function () {
     Route::get('/edit/{cat}', [CC::class, 'edit'])->name('edit');
     Route::put('/edit/{cat}', [CC::class, 'update'])->name('update');
     Route::delete('/delete/{cat}', [CC::class, 'destroy'])->name('delete');
+});
+
+Route::prefix('products')->name('products-')->group(function () {
+    Route::get('/', [PC::class, 'index'])->name('index');
+    Route::get('/create', [PC::class, 'create'])->name('create');
+    Route::post('/create', [PC::class, 'store'])->name('store');
+    Route::get('/edit/{cat}', [PC::class, 'edit'])->name('edit');
+    Route::put('/edit/{cat}', [PC::class, 'update'])->name('update');
+    Route::delete('/delete/{cat}', [PC::class, 'destroy'])->name('delete');
+    ROute::get('show/{cat}', [PC::class, 'show'])->name('show');
 });

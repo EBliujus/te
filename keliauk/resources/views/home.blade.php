@@ -13,8 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                        <span class="font-bold uppercase">
+                            Welcome {{auth()->user()->name}}
+                        </span>
                 </div>
             </div>
         </div>

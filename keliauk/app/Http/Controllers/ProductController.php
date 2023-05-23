@@ -22,7 +22,9 @@ class ProductController extends Controller
 
     public function create()
     {
-        
+        return view('back.products.create', [
+
+        ]);
     }
 
 
@@ -34,7 +36,9 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
-        //
+        return view('back.products.show', [
+            
+        ]);
     }
 
 

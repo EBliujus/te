@@ -61,13 +61,11 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" 
-                                    {{-- href="{{ route('products-index') }}" --}}
-                                    >
+                                    {{-- href="{{ route('products-index') }}"> --}}
                                         Hotels list
                                     </a>
                                     <a class="dropdown-item" 
-                                    {{-- href="{{ route('products-create') }}" --}}
-                                    >
+                                    href="{{ route('products-create') }}">
                                         Add New Hotel
                                     </a>
                                 </div>
@@ -91,6 +89,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
+                                
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

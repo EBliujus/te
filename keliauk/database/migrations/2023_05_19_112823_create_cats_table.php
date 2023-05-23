@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('cats', function (Blueprint $table) {
             $table->id();
-            $table->string('country', 100)->nullable();
+            $table->string('country', 100);
             $table->string('season', 100);
             $table->timestamps();
         });

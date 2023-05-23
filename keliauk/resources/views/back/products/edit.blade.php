@@ -4,7 +4,7 @@
         <div class="col-8">
             <div class="card mt-5">
                 <div class="card-header">
-                    <h1>Edit Category</h1>
+                    <h1>Edit Trip</h1>
                 </div>
                 <div class="card-body">
                     <form action="{{route('cats-update', $cat)}}" method="post">
