@@ -10,18 +10,28 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
-                        @forelse($cats as $cat)
+                        @forelse($products as $product)
                         <li class="list-group-item">
                             <div class="cat-line">
                                 <div class="cat-info">
-                                    <h2>{{$cat->title}}</h2>
+
+                                    <div style="display:flex; margin-right: 10px">
+                                        <h4 style="margin-right: 5px">{{$product->ProductbyCat->country}} </h4>
+                                        <h6>{{$product->ProductbyCat->season}}</h6>
+                                    </div>
+
+                                    <h2>{{$product->title}}</h2>
                                     <div class="cat-description">
-                                        <p class="--random--color">{{$cat->description}}</p>
+                                        <p class="--random--color">{{$product->description}}</p>
+                                        <p>{{$product->price}}</p>
+                                        <p>{{$product->days}}</p>
+                                        
+                                        
                                     </div>
                                 </div>
                                 <div class="buttons">
-                                    <a href="{{route('cats-edit', $cat)}}" class="btn btn-outline-success">Edit</a>
-                                    <form action="{{route('cats-delete', $cat)}}" method="post">
+                                    <a href="{{route('cats-edit', $product)}}" class="btn btn-outline-success">Edit</a>
+                                    <form action="{{route('cats-delete', $product)}}" method="post">
                                         <button type="submit" class="btn btn-outline-danger">delete</button>
                                         @csrf
                                         @method('delete')

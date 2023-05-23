@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-// use App\Models\Cat;
+use App\Models\Cat;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -22,15 +22,24 @@ class ProductController extends Controller
 
     public function create()
     {
+        $cats = Cat::all();
         return view('back.products.create', [
-
+            'cats' => $cats,
         ]);
     }
 
 
     public function store(Request $request)
     {
-        //
+        $product = new Product;
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->days = $request->days;
+        $product->cat_id = $request->cat_id;
+        $product->save();
+
+        return redirect()->route('products-index');
     }
 
 
