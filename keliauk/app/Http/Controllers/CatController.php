@@ -55,8 +55,12 @@ class CatController extends Controller
 
     public function destroy(Cat $cat)
     {
-        $cat->delete();
+        if($cat->product->count()) {
+            return 'Cannot be deleted';
+            
+        }
 
+        $cat->delete();
         return redirect()->route('cats-index');
     }
 }
