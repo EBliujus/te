@@ -53,8 +53,11 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        return view('products-edit', [
-            'product' => $product
+        $cats = Cat::all();
+
+        return view('back.products.edit', [
+            'product' => $product,
+            'cats' => $cats
         ]);
     }
 

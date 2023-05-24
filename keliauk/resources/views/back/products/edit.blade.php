@@ -16,29 +16,32 @@
                                         <div class="mb-3">
                                             <label class="form-label">Hotel name</label>
                                             <input type="text" class="form-control" name="title" value="{{old('title')}}">
+
                                             <div class="form-text">Hotel name</div>
                                         </div>
                                     </div>
                                     <div class="col-4">
                                         <div class="mb-3">
                                             <label class="form-label">Price</label>
-                                            <input type="text" class="form-control" name="price" value={{ old('price') }}>
+                                            <input type="text" class="form-control" name="price" value={{old('price')}}>
                                             <div class="form-text">Cost of the trip?</div>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="mb-3">
                                             <label class="form-label">Description</label>
-                                            <textarea type="text" rows="5" cols="40" class="form-control description-hotel" name="description" value="{{ old('description') }}"></textarea>
+                                            {{-- textarea neturi value todel reikia ikelti esama texta tiesiog!!! --}}
+                                            <textarea type="text" rows="5" cols="40" class="form-control description-hotel" name="description">{{$product->description}}</textarea>
                                             <div class="form-text">Description of the hotel</div>
                                         </div>
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Choose Category</label>
                                         <select class="form-select --cat--select" name="cat_id" 
-                                            <option value="0">Cats list</option>
                                             @foreach($cats as $cat)
-                                            <option value="{{$cat->id}}">{{$cat->country}}, {{$cat->season}}</option>
+                                            <option value="{{$cat->id}}">
+                                                {{$cat->country}}, {{$cat->season}}
+                                            </option>
                                             @endforeach
                                         </select>
                                         <div class="col-12">

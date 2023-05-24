@@ -38,8 +38,8 @@ Route::prefix('products')->name('products-')->group(function () {
     Route::get('/', [PC::class, 'index'])->name('index');
     Route::get('/create', [PC::class, 'create'])->name('create');
     Route::post('/create', [PC::class, 'store'])->name('store');
-    Route::get('/edit/{cat}', [PC::class, 'edit'])->name('edit');
-    Route::put('/edit/{cat}', [PC::class, 'update'])->name('update');
-    Route::delete('/delete/{cat}', [PC::class, 'destroy'])->name('delete');
-    ROute::get('show/{cat}', [PC::class, 'show'])->name('show');
+    Route::get('/edit/{product}', [PC::class, 'edit'])->name('edit');
+    Route::put('/edit/{product}', [PC::class, 'update'])->name('update');
+    Route::delete('/delete/{product}', [PC::class, 'destroy'])->name('delete');
+    ROute::get('show/{product}', [PC::class, 'show'])->name('show');
 });

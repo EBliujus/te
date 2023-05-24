@@ -27,13 +27,11 @@
                                         </p>
                                         <p>{{$product->price}}</p>
                                         <p>{{$product->days}}</p>
-                                        
-                                        
                                     </div>
                                 </div>
                                 <div class="buttons">
-                                    <a href="{{route('cats-edit', $product)}}" class="btn btn-outline-success">Edit</a>
-                                    <form action="{{route('cats-delete', $product)}}" method="post">
+                                    <a href="{{route('products-edit', $product)}}" class="btn btn-outline-success">Edit</a>
+                                    <form action="{{route('products-delete', $product)}}" method="post">
                                         <button type="submit" class="btn btn-outline-danger">delete</button>
                                         @csrf
                                         @method('delete')
