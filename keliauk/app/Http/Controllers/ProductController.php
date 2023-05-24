@@ -64,12 +64,20 @@ class ProductController extends Controller
 
     public function update(Request $request, Product $product)
     {
-        //
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->days = $request->days;
+        $product->cat_id = $request->cat_id;
+        $product->save();
+
+        return redirect()->route('products-index');
     }
 
 
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect()->route('products-index');
     }
 }
