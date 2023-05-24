@@ -6,7 +6,7 @@
         <div class="col-12">
             <div class="card mt-5">
                 <div class="card-header">
-                    <h1>Category List</h1>
+                    <h1>Offer List</h1>
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
@@ -17,12 +17,14 @@
 
                                     <div style="display:flex; margin-right: 10px">
                                         <h4 style="margin-right: 5px">{{$product->ProductbyCat->country}} </h4>
-                                        <h6>{{$product->ProductbyCat->season}}</h6>
+                                        <h6   class="--random--color" style="align-items: center; justify-content:center">{{$product->ProductbyCat->season}}</h6>
                                     </div>
 
                                     <h2>{{$product->title}}</h2>
-                                    <div class="cat-description">
-                                        <p class="--random--color">{{$product->description}}</p>
+                                    <div class="cat-description --random--color">
+                                        <p>
+                                            {{$product->description}}
+                                        </p>
                                         <p>{{$product->price}}</p>
                                         <p>{{$product->days}}</p>
                                         

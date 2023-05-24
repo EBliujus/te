@@ -61,7 +61,7 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" 
-                                    {{-- href="{{ route('products-index') }}"> --}}
+                                    href="{{ route('products-index') }}">
                                         Hotels list
                                     </a>
                                     <a class="dropdown-item" 
