@@ -19,14 +19,16 @@
                                         <h4 style="margin-right: 5px">{{$product->ProductbyCat->country}} </h4>
                                         <h6   class="--random--color" style="align-items: center; justify-content:center">{{$product->ProductbyCat->season}}</h6>
                                     </div>
-
+                                <div class="cat-info">
+                                    
                                     <h2>{{$product->title}}</h2>
                                     <div class="cat-description --random--color">
                                         <p>
                                             {{$product->description}}
                                         </p>
-                                        <p>{{$product->price}}</p>
-                                        <p>{{$product->days}}</p>
+                                        <p>{{$product->price}} €</p>
+                                        <p>{{$product->days}} days to stay</p>
+                                    </div>
                                     </div>
                                 </div>
                                 <div class="buttons">

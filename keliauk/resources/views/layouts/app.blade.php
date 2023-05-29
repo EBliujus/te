@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Keliauk') }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +17,9 @@
         rel="stylesheet">
 
     <!-- Scripts -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
+
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
@@ -114,7 +117,12 @@
         </nav>
 
         <main class="py-4">
+
+            @include('layouts.messages')
+            @include('layouts.errors')
+
             @yield('content')
+
         </main>
     </div>
 </body>

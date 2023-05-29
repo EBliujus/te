@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Cat;
 use Illuminate\Http\Request;
+use App\Services\Messages;
+
 
 class CatController extends Controller
 {
@@ -32,7 +34,9 @@ class CatController extends Controller
             'country' => $request->country,
             'season' => $request->season,
         ]);
-        return redirect()->route('cats-index');
+        return redirect()
+        ->route('cats-index');
+        
     }
 
     public function edit(Cat $cat)
@@ -57,7 +61,7 @@ class CatController extends Controller
     {
         if($cat->product->count()) {
             return 'Cannot be deleted';
-            
+
         }
 
         $cat->delete();
